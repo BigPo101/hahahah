@@ -1,1 +1,13 @@
+var visibilitychangeLogEl = document.querySelector('.visibilitychange-log');
 
+anime({
+  targets: '.visibilitychange-demo .el',
+  translateX: 270,
+  direction: 'alternate',
+  easing: 'easeInOutQuad',
+  loop: true,
+  duration: 2000,
+  update: function(a) {
+    visibilitychangeLogEl.innerHTML = 'animation progress ' + Math.round(a.progress);
+  }
+});
